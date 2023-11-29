@@ -6,14 +6,13 @@ public class Cliente extends Thread {
     private Barbearia barbearia;
 
     public Cliente(Barbearia barbearia) {
-        this.id = count++;
         this.barbearia = barbearia;
     }
 
     @Override
     public void run() {
         try {
-            System.out.println("Cliente chegou à barbearia.");
+            System.out.println("Cliente chegou a barbearia");
             barbearia.novoCliente();
             synchronized (barbearia) {
                 barbearia.notify(); // Notifica o barbeiro que há um cliente

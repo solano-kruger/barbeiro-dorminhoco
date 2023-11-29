@@ -22,9 +22,9 @@ public class Interface extends javax.swing.JFrame {
     }
     
     public static void atualizarFila(int quantidade){
-        if(quantidade !=0){
-            jtfFila1.setText(String.valueOf(quantidade));
-        }
+        
+        jtfFila1.setText(String.valueOf(quantidade));
+        
     }
     
     public static void atualizarAtendidos(){

@@ -20,12 +20,13 @@ public class Barbearia {
     public synchronized boolean proximoCliente() {
         if (clientesEsperando > 0) {
             clientesEsperando--;
-            Interface.atualizarFila(clientesEsperando);
+            
             System.out.println("Barbeiro cortando o cabelo de um cliente. Total de clientes esperando: " + clientesEsperando);
+            Interface.atualizarFila(clientesEsperando);
             notify(); // Notifica um cliente que o barbeiro está pronto para atendê-lo
             return true;
-        }else{
-            Interface.atualizarFila(0);
+        }else if(clientesEsperando == 0){
+           Interface.atualizarFila(0); 
         }
         return false;
     }
